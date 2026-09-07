@@ -14,7 +14,7 @@ class Server {
 
         // Paths
         this.paths = {
-            // A integración en la siguiente clase
+            user: '/api/user'
         }
 
         // Conexión con la base de datos
