@@ -41,7 +41,11 @@ class Server {
     }
 
     middlewares() {
+        // Logger
+        this.app.use(morgan('dev'))
 
+        // CORS
+        this.app.use(cors())
     }
 
     routes() {
