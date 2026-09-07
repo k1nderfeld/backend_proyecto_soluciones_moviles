@@ -4,6 +4,7 @@ const cors = require("cors")
 require("dotenv").config()
 
 // Imports
+const db = require('./config/database')
 
 class Server {
     constructor() {
