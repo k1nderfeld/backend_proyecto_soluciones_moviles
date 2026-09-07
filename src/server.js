@@ -4,6 +4,7 @@ const cors = require("cors")
 require("dotenv").config()
 
 // Imports
+const db = require('./config/database')
 
 class Server {
     constructor() {
@@ -14,6 +15,7 @@ class Server {
         // Paths
         this.paths = {
             // A integración en la siguiente clase
+            user: '/api/user'
         }
 
         // Conexión con la base de datos
@@ -40,11 +42,15 @@ class Server {
     }
 
     middlewares() {
+        // Logger
+        this.app.use(morgan('dev'))
 
+        // CORS
+        this.app.use(cors())
     }
 
     routes() {
-
+        this.app.use(this.paths.user, require('./routes/user.route'))
     }
 
     listen() {
