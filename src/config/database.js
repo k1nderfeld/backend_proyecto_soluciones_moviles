@@ -5,3 +5,5 @@ const db = new Sequelize({
   logging: false,
   storage: `${process.env.DATABASE_NAME}`.sqlite
 })
+
+module.exports = db;
