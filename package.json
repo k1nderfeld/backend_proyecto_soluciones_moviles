@@ -13,9 +13,10 @@
   "license": "ISC",
   "author": "Baltazar Rodríguez & Daniel Díaz",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "./src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
+    "start": "node"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
