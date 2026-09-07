@@ -1,15 +1,15 @@
-module.export = {
+module.exports = {
   development: {
     database: "database_development",
-    dialect: "sqlite",
+    dialect: 'sqlite',
     storage: "./src/database/database.sqlite"
   },
   test: {
     database: "database_test",
-    dialect: "sqlite"
+    dialect: 'sqlite'
   },
   production: {
     database: "database",
-    dialect: "sqlite"
+    dialect: 'sqlite'
   }
 }
