@@ -12,6 +12,11 @@
 
 ## Ejecución
 
+Estamos ocupando de momento:
+```
+    npm run dev
+```
+
 ## Estructura del Proyecto
 
 ## Documentación de la API
