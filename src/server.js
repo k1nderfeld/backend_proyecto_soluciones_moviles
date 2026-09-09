@@ -5,6 +5,8 @@ require("dotenv").config()
 
 // Imports
 const db = require('./config/database')
+const User = require('./models/user')
+const Rock = require("./models/rock")
 
 class Server {
     constructor() {
@@ -39,6 +41,8 @@ class Server {
         })
 
         // Carga de modelos a la base de datos
+        await User.sync({ force: false })
+        await Rock.sync({ force: false })
     }
 
     middlewares() {

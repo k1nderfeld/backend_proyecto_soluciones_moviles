@@ -33,7 +33,8 @@ User.init({
     sequelize: db,
     modelName: 'User',
     tableName: 'user',
-    timestamps: true
+    timestamps: true,
+    paranoid: true
 })
 
 User.prototype.toJSON = function () {
