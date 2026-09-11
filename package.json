@@ -1,24 +1,15 @@
 {
-  "name": "backend_proyecto_soluciones_moviles",
+  "name": "backend_clases",
   "version": "1.0.0",
-  "description": "App desarrollada para el escaneo de rocas.",
-  "homepage": "https://github.com/k1nderfeld/backend_proyecto_soluciones_moviles#readme",
-  "bugs": {
-    "url": "https://github.com/k1nderfeld/backend_proyecto_soluciones_moviles/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/k1nderfeld/backend_proyecto_soluciones_moviles.git"
-  },
-  "license": "ISC",
-  "author": "Baltazar Rodríguez & Daniel Díaz",
-  "type": "commonjs",
-  "main": "./src/server.js",
+  "description": "Backend de una app para el reconocimiento de rocas.",
+  "main": "./src/app.js",
   "scripts": {
     "dev": "nodemon",
     "start": "node",
     "migrate": "npx sequelize-cli db:migrate"
   },
+  "author": "Jose Benitez",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",

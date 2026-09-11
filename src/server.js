@@ -5,6 +5,8 @@ require("dotenv").config()
 
 // Imports
 const db = require('./config/database')
+const User = require('./models/user')
+const Rock = require("./models/rock")
 
 class Server {
     constructor() {
@@ -14,6 +16,7 @@ class Server {
 
         // Paths
         this.paths = {
+            // A integración en la siguiente clase
             user: '/api/user'
         }
 
@@ -38,6 +41,8 @@ class Server {
         })
 
         // Carga de modelos a la base de datos
+        await User.sync({ force: false })
+        await Rock.sync({ force: false })
     }
 
     middlewares() {
@@ -49,7 +54,7 @@ class Server {
     }
 
     routes() {
-
+        this.app.use(this.paths.user, require('./routes/user.route'))
     }
 
     listen() {

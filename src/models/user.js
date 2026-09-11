@@ -1,5 +1,5 @@
 const { DataTypes, Model } = require('sequelize')
-const db = require('../config/database.js')
+const db = require('../config/database')
 
 class User extends Model {
     static id
@@ -11,21 +11,21 @@ class User extends Model {
 
 User.init({
     userName: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
     email: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
     password: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false
     },
     phone: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: true,
         unique: true
     }
@@ -33,11 +33,12 @@ User.init({
     sequelize: db,
     modelName: 'User',
     tableName: 'user',
-    timeStamps: true
+    timestamps: true,
+    paranoid: true
 })
 
 User.prototype.toJSON = function () {
-    const { password, ...user} = this.get()
+    const { password, ...user } = this.get()
     delete user.password
     return user
 }
